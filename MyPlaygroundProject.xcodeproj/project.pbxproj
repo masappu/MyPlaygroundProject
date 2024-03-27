@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4193ADCE2BB3E60100ABF8B0 /* TimeSelectorGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193ADCD2BB3E60100ABF8B0 /* TimeSelectorGridView.swift */; };
 		87B8C1AD2BB31D19006D39EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B8C1AC2BB31D19006D39EF /* AppDelegate.swift */; };
 		87B8C1AF2BB31D19006D39EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B8C1AE2BB31D19006D39EF /* SceneDelegate.swift */; };
 		87B8C1B12BB31D19006D39EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B8C1B02BB31D19006D39EF /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4193ADCD2BB3E60100ABF8B0 /* TimeSelectorGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectorGridView.swift; sourceTree = "<group>"; };
 		87B8C1A92BB31D19006D39EF /* MyPlaygroundProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaygroundProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B8C1AC2BB31D19006D39EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87B8C1AE2BB31D19006D39EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4193ADCC2BB3E5DF00ABF8B0 /* TimeSelectorGridView */ = {
+			isa = PBXGroup;
+			children = (
+				4193ADCD2BB3E60100ABF8B0 /* TimeSelectorGridView.swift */,
+			);
+			path = TimeSelectorGridView;
+			sourceTree = "<group>";
+		};
 		87B8C1A02BB31D19006D39EF = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		87B8C1C02BB31D29006D39EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4193ADCC2BB3E5DF00ABF8B0 /* TimeSelectorGridView */,
 				87B8C1C32BB31DA4006D39EF /* DateSelectorListView */,
 			);
 			path = Views;
@@ -158,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B8C1B12BB31D19006D39EF /* ViewController.swift in Sources */,
+				4193ADCE2BB3E60100ABF8B0 /* TimeSelectorGridView.swift in Sources */,
 				87B8C1AD2BB31D19006D39EF /* AppDelegate.swift in Sources */,
 				87B8C1AF2BB31D19006D39EF /* SceneDelegate.swift in Sources */,
 				87B8C1C22BB31D3B006D39EF /* DateSelectorListView.swift in Sources */,

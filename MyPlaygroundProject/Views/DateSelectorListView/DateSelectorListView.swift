@@ -163,7 +163,7 @@ struct DateSelectorView: View {
             if let image = model.capacityImage {
                 image
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: 18, height: 18)
                     .padding(.vertical, 12)
             }
@@ -175,5 +175,8 @@ struct DateSelectorView: View {
 }
 
 #Preview {
-    DateSelectorListView(models: DateSelectorModel.mockList)
+    DateSelectorListView(
+        models: DateSelectorModel.mockList
+//        models: []
+    )
 }

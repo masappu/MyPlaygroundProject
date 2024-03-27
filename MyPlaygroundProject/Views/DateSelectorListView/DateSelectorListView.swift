@@ -31,7 +31,7 @@ enum Weekday: Int {
     }
 }
 
-struct DateSelectorModel: Identifiable {
+struct DateSelectorModel:Equatable, Identifiable {
 
     enum Capacity: String {
         case full
@@ -106,35 +106,16 @@ struct DateSelectorListView: View {
         self.models = models
     }
 
+    private func isLast(_ model: DateSelectorModel) -> Bool {
+        model == models.last
+    }
+
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 0, content: {
                 ForEach(models) { model in
-                    VStack(spacing: 0, content: {
-                        VStack(spacing: 2, content: {
-                            Text(model.dateString)
-                                .font(.system(size: 12, weight: .semibold))
-
-                            Text(model.weekDay.string)
-                                .font(.system(size: 11, weight: .regular))
-                        })
-                        .foregroundColor(model.fontColor)
-                        .padding(.vertical, 4)
-
-                        Divider()
-
-                        if let image = model.capacityImage {
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 18, height: 18)
-                                .padding(.vertical, 12)
-                        }
-
-                        Divider()
-                    })
-                    .frame(width: 46)
-                    .overlay {
+                    DateSelectorView(model: model)
+                    .overlay (
                         GeometryReader(content: { geometry in
                             Path { path in
                                 let x = geometry.size.width
@@ -147,11 +128,49 @@ struct DateSelectorListView: View {
                                 Color.gray,
                                 lineWidth: 0.2
                             )
+                            .opacity(isLast(model) ? 0 : 1)
                         })
-                    }
+                    )
                 }
             })
         }
+    }
+}
+
+
+struct DateSelectorView: View {
+
+    private let model: DateSelectorModel
+
+    init(model: DateSelectorModel) {
+        self.model = model
+    }
+
+    var body: some View {
+        VStack(spacing: 0, content: {
+            VStack(spacing: 2, content: {
+                Text(model.dateString)
+                    .font(.system(size: 12, weight: .semibold))
+
+                Text(model.weekDay.string)
+                    .font(.system(size: 11, weight: .regular))
+            })
+            .foregroundColor(model.fontColor)
+            .padding(.vertical, 4)
+
+            Divider()
+
+            if let image = model.capacityImage {
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 18, height: 18)
+                    .padding(.vertical, 12)
+            }
+
+            Divider()
+        })
+        .frame(width: 46)
     }
 }
 
